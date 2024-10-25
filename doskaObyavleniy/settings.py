@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-2lu%bmhask%%8@oj0_sbk_0vbmfn679y%c59p-kq7m3aaq@b(1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -60,7 +60,6 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'main.middlewares.bboard_context_processor',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -118,20 +117,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    BASE_DIR / "static",  # Add this if you have a static folder in your project root
-    BASE_DIR / "main/static",  # Ensure this is included if your static files are in the 'main' app
-]
+STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-
 AUTH_USER_MODEL= 'main.AdvUser'
+
 
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True

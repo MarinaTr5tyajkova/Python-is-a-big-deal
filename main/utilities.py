@@ -1,10 +1,8 @@
 from django.template.loader import render_to_string
 from django.core.signing import Signer
-from django.core.mail import EmailMessage
-from django.conf import settings
-# from bboard.bboard.settings import ALLOWED_HOSTS
 
 
+from doskaObyavleniy.settings import ALLOWED_HOSTS
 signer = Signer()
 
 
@@ -20,5 +18,3 @@ def send_activation_notification(user):
                                 context)
    user.email_user(subject, body_text)
 
-def send_activation_notification(user):
-    allowed_hosts = settings.ALLOWED_HOSTS
